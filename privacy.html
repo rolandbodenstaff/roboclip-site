@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#203936" />
+    <meta name="description" content="RoboClip Privacy Statement" />
+    <title>Privacy Statement — RoboClip</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RoboClip home">
+        <img src="icon.svg" width="40" height="40" alt="" />
+        <span>RoboClip</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./">Home</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="legal-main">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Statement</h1>
+      <p class="legal-meta">Effective and last updated: October 4, 2026</p>
+      <p class="legal-intro">
+        RoboClip is a desktop clipboard assistant developed and maintained by Roland
+        Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
+        information is handled when you use RoboClip.
+      </p>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          RoboClip is designed to work locally. We do not operate a RoboClip cloud
+          service, user-account database, advertising system, analytics service, or
+          telemetry platform. Information leaves your device only when necessary for a
+          feature you choose to use, such as signing in to an AI provider, testing a
+          connection, loading available models, or submitting text for AI processing.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Information handled by RoboClip</h2>
+        <ul>
+          <li><strong>Clipboard content.</strong> RoboClip reads current clipboard text when you open or use its clipboard features. It does not continuously upload or remotely monitor your clipboard.</li>
+          <li><strong>Prompts and AI results.</strong> When you run a prompt, RoboClip combines the selected or entered instruction with clipboard text and sends it to your selected AI provider. The response is shown in RoboClip.</li>
+          <li><strong>Local clipboard history.</strong> If enabled, input text, generated output, prompt name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default).</li>
+          <li><strong>Settings and templates.</strong> Provider settings, keyboard shortcut, theme, autostart choice, history limit, and custom prompt templates are stored locally.</li>
+          <li><strong>Provider credentials.</strong> API keys are stored through the operating system's credential manager and not in RoboClip's ordinary settings file.</li>
+          <li><strong>ChatGPT account information.</strong> If you choose Continue with ChatGPT, RoboClip locally stores the account identifier, email address, authorization tokens, selected model, and a random installation identifier. Authorization data is stored in an AES-256-GCM encrypted local vault whose key is held in the operating system credential manager.</li>
+        </ul>
+        <p>
+          Clipboard content may contain personal or sensitive information. You are
+          responsible for deciding what to submit and ensuring you have the right to
+          process information relating to other people.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. How information is used</h2>
+        <p>RoboClip uses information only to provide features you request, including to:</p>
+        <ul>
+          <li>read and transform clipboard text;</li>
+          <li>send a prompt to the selected AI provider and display its response;</li>
+          <li>save optional local history and reusable templates;</li>
+          <li>remember application and provider settings;</li>
+          <li>authenticate with a provider and maintain that connection; and</li>
+          <li>copy an AI-generated result back to the clipboard.</li>
+        </ul>
+        <p>We do not use information for advertising, profiling, data brokerage, or marketing, and we do not sell personal information.</p>
+      </section>
+
+      <section>
+        <h2>3. Third-party AI providers</h2>
+        <p>
+          RoboClip connects directly from your device to the provider you configure. We
+          do not receive a copy of your prompts, clipboard content, AI results, API keys,
+          or provider-account credentials. Depending on your selection, information may
+          be sent to OpenAI, Microsoft Azure, Google, or Anthropic. A custom
+          OpenAI-compatible base URL or Azure endpoint sends information to that
+          endpoint's operator.
+        </p>
+        <p>
+          Requests normally contain the prompt, clipboard text, selected model, and
+          generation settings. The provider also receives ordinary internet connection
+          information such as your IP address. Provider processing is governed by your
+          agreement with that provider and its privacy terms:
+        </p>
+        <ul>
+          <li><a href="https://openai.com/policies/row-privacy-policy/">OpenAI Privacy Policy</a></li>
+          <li><a href="https://www.microsoft.com/privacy/privacystatement">Microsoft Privacy Statement</a></li>
+          <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+          <li><a href="https://www.anthropic.com/legal/privacy">Anthropic Privacy Policy</a></li>
+        </ul>
+        <p>
+          For ChatGPT plan requests, RoboClip sets <code>store</code> to
+          <code>false</code>. This request parameter does not replace OpenAI's terms,
+          safety practices, or any retention OpenAI may independently apply.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Microsoft Store and operating-system services</h2>
+        <p>
+          If you obtain RoboClip through the Microsoft Store, Microsoft may independently
+          process account, purchase, licensing, download, device, diagnostic, or usage
+          information under its privacy statement. RoboClip does not receive your
+          Microsoft account credentials or payment information from the Store.
+        </p>
+        <p>
+          Your operating system provides services used by RoboClip, including clipboard,
+          credential manager, global shortcut, autostart, and application-data storage.
+          Those services are governed by your operating-system settings and its provider's
+          privacy terms.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Local storage, retention, and deletion</h2>
+        <p>Local information remains until you delete it, change the relevant setting, sign out, or uninstall RoboClip.</p>
+        <ul>
+          <li>Clear saved clipboard entries from the History screen.</li>
+          <li>Disable history or change its maximum size in Settings.</li>
+          <li>Edit or delete custom templates.</li>
+          <li>Remove API keys in the relevant provider settings.</li>
+          <li>Sign out of ChatGPT to attempt remote revocation and remove local tokens. If revocation cannot be confirmed, disconnect RoboClip through ChatGPT settings.</li>
+          <li>Use operating-system application-data and credential-management tools to remove any entries retained after uninstalling.</li>
+        </ul>
+        <p>RoboClip keeps no server-side copy. Use the relevant provider's controls for information that provider retains.</p>
+      </section>
+
+      <section>
+        <h2>6. Security</h2>
+        <p>
+          API keys use the operating system credential manager. ChatGPT authorization
+          tokens use an encrypted local vault whose key is held by that credential
+          manager. Built-in provider addresses use HTTPS; transport security for a custom
+          endpoint depends on the address and service you configure. No storage or
+          transmission method is completely secure.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Analytics and advertising</h2>
+        <p>
+          RoboClip contains no advertising, tracking cookies, behavioral analytics, or
+          developer-operated telemetry and does not automatically send crash reports or
+          usage statistics to us. Distribution and AI providers may collect their own
+          diagnostic or service information under their terms.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Children's privacy</h2>
+        <p>
+          RoboClip is a general productivity application and is not directed to children.
+          We do not knowingly collect children's personal information through a RoboClip
+          service. Provider age requirements and account terms apply.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Your choices and rights</h2>
+        <p>
+          In-app controls let you manage settings and templates, clear history, remove
+          API keys, and sign out of ChatGPT. Because RoboClip operates no user database or
+          server, we generally possess no separate copy of your information. Direct legal
+          requests concerning provider-held information to that provider. Use Microsoft's
+          privacy controls for Microsoft Store information.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. International processing</h2>
+        <p>
+          Your selected AI provider may process information outside your country. Its
+          terms and privacy statement describe processing locations, safeguards, and
+          available rights.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Changes to this statement</h2>
+        <p>
+          We may update this statement when RoboClip's features, providers, or legal
+          obligations change. The date above will be updated, and material changes will
+          be communicated through an appropriate channel such as the application, Store
+          listing, or this website.
+        </p>
+      </section>
+
+      <section>
+        <h2>12. Contact</h2>
+        <p>
+          For privacy questions about RoboClip, contact the developer through the
+          <a href="https://github.com/rolandbodenstaff">public GitHub profile</a>. Do not
+          include API keys, access tokens, passwords, private clipboard content, or other
+          sensitive information in a public message. Contact the relevant provider
+          directly for information it processes.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand"><img src="icon.svg" width="32" height="32" alt="" /><span>RoboClip</span></div>
+      <p>AI-powered clipboard assistance for Windows.</p>
+      <div class="footer-links"><a href="./">Home</a><a href="privacy.html">Privacy</a></div>
+      <p class="copyright">© 2026 Roland Bodenstaff</p>
+    </footer>
+  </body>
+</html>
