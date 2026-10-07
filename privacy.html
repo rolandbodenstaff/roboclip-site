@@ -24,7 +24,7 @@
     <main class="legal-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Statement</h1>
-      <p class="legal-meta">Effective and last updated: October 6, 2026</p>
+      <p class="legal-meta">Effective and last updated: October 7, 2026</p>
       <p class="legal-intro">
         RoboClip is a desktop clipboard assistant developed and maintained by Roland
         Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
@@ -38,7 +38,8 @@
           service, user-account database, advertising system, analytics service, or
           telemetry platform. Information leaves your device only when necessary for a
           feature you choose to use, such as signing in to an AI provider, testing a
-          connection, loading available models, or submitting text for AI processing.
+          connection, loading available models, submitting text for AI processing, or
+          searching GIPHY for a reaction image.
         </p>
       </section>
 
@@ -47,9 +48,10 @@
         <ul>
           <li><strong>Clipboard content.</strong> RoboClip reads current clipboard text when you open or use its clipboard features. It does not continuously upload or remotely monitor your clipboard.</li>
           <li><strong>Prompts, template variables, and AI results.</strong> When you run a prompt, RoboClip combines the selected or entered instruction, any run-time variable choices, and clipboard text and sends them to your selected AI provider. The response is shown in RoboClip. A custom value entered through a template's Other choice is used for that run only and is not saved as a template option.</li>
-          <li><strong>Local clipboard history.</strong> If enabled, input text, generated output, prompt name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default).</li>
+          <li><strong>GIF searches and media.</strong> For a GIF template, the selected AI provider turns the clipboard content into a short search phrase. RoboClip sends that phrase—not the original clipboard text—to GIPHY and loads the returned preview media. Selecting a result downloads the animated GIF to RoboClip's local cache and places that file on the native clipboard. The previous cached GIF is removed when another result is copied.</li>
+          <li><strong>Local clipboard history.</strong> If enabled, input text, generated text output, prompt name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default). GIF search results and selected GIF media are not added to history.</li>
           <li><strong>Settings and templates.</strong> Provider settings, keyboard shortcut, theme, autostart choice, history limit, custom prompt templates, and their preset variable choices are stored locally.</li>
-          <li><strong>Provider credentials.</strong> API keys are stored through the operating system's credential manager and not in RoboClip's ordinary settings file.</li>
+          <li><strong>Provider credentials.</strong> AI-provider and GIPHY API keys are stored through the operating system's credential manager and not in RoboClip's ordinary settings file.</li>
           <li><strong>ChatGPT account information.</strong> If you choose Continue with ChatGPT, RoboClip locally stores the account identifier, email address, authorization tokens, selected model, and a random installation identifier. Authorization data is stored in an AES-256-GCM encrypted local vault whose key is held in the operating system credential manager.</li>
         </ul>
         <p>
@@ -65,6 +67,7 @@
         <ul>
           <li>read and transform clipboard text;</li>
           <li>send a prompt to the selected AI provider and display its response;</li>
+          <li>search GIPHY using an AI-generated phrase and display GIF previews;</li>
           <li>save optional local history and reusable templates;</li>
           <li>remember application and provider settings;</li>
           <li>authenticate with a provider and maintain that connection; and</li>
@@ -74,7 +77,7 @@
       </section>
 
       <section>
-        <h2>3. Third-party AI providers</h2>
+        <h2>3. Third-party providers</h2>
         <p>
           RoboClip connects directly from your device to the provider you configure. We
           do not receive a copy of your prompts, clipboard content, AI results, API keys,
@@ -100,6 +103,15 @@
           <code>false</code>. This request parameter does not replace OpenAI's terms,
           safety practices, or any retention OpenAI may independently apply.
         </p>
+        <p>
+          If you use a GIF template, RoboClip connects directly to GIPHY. GIPHY receives
+          the generated search phrase, the configured content-filter and locale-related
+          request information, and ordinary connection information such as your IP
+          address. It does not receive the original clipboard text from RoboClip. GIPHY
+          returns GIF metadata and media URLs, and the app loads previews from those URLs.
+          This processing is governed by the
+          <a href="https://support.giphy.com/hc/en-us/articles/360020027752-GIPHY-Privacy-Policy">GIPHY Privacy Policy</a>.
+        </p>
       </section>
 
       <section>
@@ -123,6 +135,7 @@
         <p>Local information remains until you delete it, change the relevant setting, sign out, or uninstall RoboClip.</p>
         <ul>
           <li>Clear saved clipboard entries from the History screen.</li>
+          <li>Copying another GIF replaces the previous GIF in RoboClip's local media cache; uninstalling RoboClip or clearing its cache removes the remaining file.</li>
           <li>Disable history or change its maximum size in Settings.</li>
           <li>Edit or delete custom templates.</li>
           <li>Remove API keys in the relevant provider settings.</li>
@@ -135,7 +148,7 @@
       <section>
         <h2>6. Security</h2>
         <p>
-          API keys use the operating system credential manager. ChatGPT authorization
+          AI-provider and GIPHY API keys use the operating system credential manager. ChatGPT authorization
           tokens use an encrypted local vault whose key is held by that credential
           manager. Built-in provider addresses use HTTPS; transport security for a custom
           endpoint depends on the address and service you configure. No storage or
@@ -148,7 +161,7 @@
         <p>
           RoboClip contains no advertising, tracking cookies, behavioral analytics, or
           developer-operated telemetry and does not automatically send crash reports or
-          usage statistics to us. Distribution and AI providers may collect their own
+          usage statistics to us. Distribution, AI, and media providers may collect their own
           diagnostic or service information under their terms.
         </p>
       </section>
