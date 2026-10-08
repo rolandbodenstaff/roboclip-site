@@ -51,6 +51,7 @@
           <li><strong>GIF searches and media.</strong> For a GIF template, the selected AI provider turns the clipboard content into a short search phrase. RoboClip sends that phrase—not the original clipboard text—to GIPHY and loads the returned preview media. Selecting a result downloads the animated GIF to RoboClip's local cache and places that file on the native clipboard. The previous cached GIF is removed when another result is copied.</li>
           <li><strong>Local clipboard history.</strong> If enabled, input text, generated text output, prompt name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default). GIF search results and selected GIF media are not added to history.</li>
           <li><strong>Settings and templates.</strong> Provider settings, keyboard shortcut, theme, autostart choice, history limit, custom prompt templates, and their preset variable choices are stored locally.</li>
+          <li><strong>Exported settings backups.</strong> When you choose Export settings, RoboClip writes a JSON file to the location you select. It contains templates, the keyboard shortcut, theme, history preference, and non-secret provider configuration. It excludes API keys, ChatGPT account identifiers and authorization data, clipboard history contents, and the autostart choice.</li>
           <li><strong>Provider credentials.</strong> AI-provider and GIPHY API keys are stored through the operating system's credential manager and not in RoboClip's ordinary settings file.</li>
           <li><strong>ChatGPT account information.</strong> If you choose Continue with ChatGPT, RoboClip locally stores the account identifier, email address, authorization tokens, selected model, and a random installation identifier. Authorization data is stored in an AES-256-GCM encrypted local vault whose key is held in the operating system credential manager.</li>
         </ul>
@@ -138,6 +139,7 @@
           <li>Copying another GIF replaces the previous GIF in RoboClip's local media cache; uninstalling RoboClip or clearing its cache removes the remaining file.</li>
           <li>Disable history or change its maximum size in Settings.</li>
           <li>Edit or delete custom templates.</li>
+          <li>Export or import templates and non-secret preferences. Exported backup files remain in the location you select until you move or delete them.</li>
           <li>Remove API keys in the relevant provider settings.</li>
           <li>Sign out of ChatGPT to attempt remote revocation and remove local tokens. If revocation cannot be confirmed, disconnect RoboClip through ChatGPT settings.</li>
           <li>Use operating-system application-data and credential-management tools to remove any entries retained after uninstalling.</li>
@@ -178,8 +180,8 @@
       <section>
         <h2>9. Your choices and rights</h2>
         <p>
-          In-app controls let you manage settings and templates, clear history, remove
-          API keys, and sign out of ChatGPT. Because RoboClip operates no user database or
+          In-app controls let you manage, export, and import settings and templates,
+          clear history, remove API keys, and sign out of ChatGPT. Because RoboClip operates no user database or
           server, we generally possess no separate copy of your information. Direct legal
           requests concerning provider-held information to that provider. Use Microsoft's
           privacy controls for Microsoft Store information.
