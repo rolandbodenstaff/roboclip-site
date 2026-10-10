@@ -24,7 +24,7 @@
     <main class="legal-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Statement</h1>
-      <p class="legal-meta">Effective and last updated: October 7, 2026</p>
+      <p class="legal-meta">Effective and last updated: October 10, 2026</p>
       <p class="legal-intro">
         RoboClip is a desktop clipboard assistant developed and maintained by Roland
         Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
@@ -47,7 +47,7 @@
         <h2>1. Information handled by RoboClip</h2>
         <ul>
           <li><strong>Clipboard content.</strong> RoboClip reads current clipboard text when you open or use its clipboard features. It does not continuously upload or remotely monitor your clipboard.</li>
-          <li><strong>Prompts, template variables, and AI results.</strong> When you run a prompt, RoboClip combines the selected or entered instruction, any run-time variable choices, and clipboard text and sends them to your selected AI provider. The response is shown in RoboClip. A custom value entered through a template's Other choice is used for that run only and is not saved as a template option.</li>
+          <li><strong>Prompts, template variables, and AI results.</strong> When you run a prompt, RoboClip combines the selected or entered instruction, any run-time variable choices, and clipboard text and sends them to your selected AI provider or local model server. The response is shown in RoboClip. A custom value entered through a template's Other choice is used for that run only and is not saved as a template option.</li>
           <li><strong>GIF searches and media.</strong> For a GIF template, the selected AI provider turns the clipboard content into a short search phrase. RoboClip sends that phrase—not the original clipboard text—to GIPHY and loads the returned preview media. Selecting a result downloads the animated GIF to RoboClip's local cache and places that file on the native clipboard. The previous cached GIF is removed when another result is copied.</li>
           <li><strong>Local clipboard history.</strong> If enabled, input text, generated text output, prompt name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default). GIF search results and selected GIF media are not added to history.</li>
           <li><strong>Settings and templates.</strong> Provider settings, the global popup shortcut, optional template shortcuts, theme, autostart choice, history limit, custom prompt templates, and their preset variable choices are stored locally.</li>
@@ -80,12 +80,19 @@
       <section>
         <h2>3. Third-party providers</h2>
         <p>
-          RoboClip connects directly from your device to the provider you configure. We
+          RoboClip connects directly from your device to the provider or model server you configure. We
           do not receive a copy of your prompts, clipboard content, AI results, API keys,
           or provider-account credentials. Depending on your selection, information may
           be sent to OpenAI, Microsoft Azure, Google, or Anthropic. A custom
           OpenAI-compatible base URL or Azure endpoint sends information to that
           endpoint's operator.
+        </p>
+        <p>
+          If you select Local model, RoboClip sends requests over a loopback connection
+          only to the Ollama, LM Studio, or other compatible server running on the same
+          computer. RoboClip does not require an API key for that connection. The local
+          server software and selected model determine whether inference stays entirely
+          on the computer or whether that software uses an external service.
         </p>
         <p>
           Requests normally contain the prompt, clipboard text, selected model, and
@@ -152,9 +159,10 @@
         <p>
           AI-provider and GIPHY API keys use the operating system credential manager. ChatGPT authorization
           tokens use an encrypted local vault whose key is held by that credential
-          manager. Built-in provider addresses use HTTPS; transport security for a custom
-          endpoint depends on the address and service you configure. No storage or
-          transmission method is completely secure.
+          manager. Built-in remote-provider addresses use HTTPS. Local-model requests use
+          an HTTP loopback address restricted to this computer; transport security for
+          other custom provider endpoints depends on the address and service you configure.
+          No storage or transmission method is completely secure.
         </p>
       </section>
 
