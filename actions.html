@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#203936" />
+    <meta
+      name="description"
+      content="A simple guide to creating AI actions and local clipboard tools in RoboClip."
+    />
+    <title>Build actions — RoboClip</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RoboClip home">
+        <img src="icon.svg" width="40" height="40" alt="" />
+        <span>RoboClip</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./">Home</a>
+        <a class="nav-secondary" href="./#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="guide-main">
+      <section class="guide-hero">
+        <p class="eyebrow">RoboClip actions</p>
+        <h1>Build actions around the work you repeat.</h1>
+        <p class="guide-intro">
+          An action turns the text on your clipboard into a repeatable workflow. Start with a simple prompt or choose a local tool, then run it from the popup whenever you need it.
+        </p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Start in three steps.</h2>
+        <div class="guide-grid">
+          <article class="guide-card">
+            <span class="step-number">01</span>
+            <h3>Add an action</h3>
+            <p>Open Actions in RoboClip and select <strong>Add action</strong>.</p>
+          </article>
+          <article class="guide-card">
+            <span class="step-number">02</span>
+            <h3>Choose how it runs</h3>
+            <p>Use an AI action for a reusable prompt, or a local tool for an on-device transformation.</p>
+          </article>
+          <article class="guide-card">
+            <span class="step-number">03</span>
+            <h3>Name and save it</h3>
+            <p>Give it a clear name. It appears in the popup and can also have its own shortcut.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>AI actions and local tools.</h2>
+        <p>Both start with your clipboard, but they process it differently.</p>
+        <div class="action-types">
+          <article class="action-type">
+            <p class="eyebrow">AI action</p>
+            <h3>Write a reusable instruction</h3>
+            <p>Use <code>{{input}}</code> where the clipboard text belongs. Leave the provider unchanged to use your active provider, or choose an override for this action only.</p>
+          </article>
+          <article class="action-type">
+            <p class="eyebrow">Local tool</p>
+            <h3>Process text on this device</h3>
+            <p>Decode JWTs, transform Base64 or Base64URL, and encode or decode URL components without using an AI provider.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>A small action is often enough.</h2>
+        <p>This example asks for one choice when it runs and then inserts the clipboard text:</p>
+        <div class="action-example" aria-label="Example RoboClip action template">
+          <pre><code>Rewrite this in a {{tone}} tone.
+Keep the meaning and return only the rewritten text.
+
+{{input}}</code></pre>
+        </div>
+        <p>Add a few choices such as <strong>Friendly</strong>, <strong>Professional</strong>, and <strong>Direct</strong>. RoboClip shows them as numbered options and also offers <strong>Other…</strong> when you need something different.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Keep actions easy to recognize.</h2>
+        <ul class="tip-list">
+          <li>Use a short name that describes the result, such as “Fix grammar” or “Summarize”.</li>
+          <li>Keep one action focused on one job.</li>
+          <li>Use the default provider unless this action really needs a different provider or model.</li>
+          <li>Assign a direct shortcut only to actions you use often.</li>
+          <li>Drag actions into the order you want; popup number keys follow that order.</li>
+        </ul>
+        <div class="guide-cta">
+          <p>Ready to try it? Open RoboClip, go to Actions, and start with one task you repeat every day.</p>
+          <a class="button" href="./">Back to RoboClip</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand">
+        <img src="icon.svg" width="32" height="32" alt="" />
+        <span>RoboClip</span>
+      </div>
+      <p>AI and local clipboard actions for Windows.</p>
+      <div class="footer-links">
+        <a href="actions.html">Actions</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/rolandbodenstaff">Developer</a>
+      </div>
+      <p class="copyright">© 2026 Roland Bodenstaff</p>
+    </footer>
+  </body>
+</html>
