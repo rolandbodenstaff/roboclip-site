@@ -192,7 +192,10 @@ h1 span { color: var(--green-light); }
   font: 700 0.7rem ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 .result { padding: 20px; border: 1px solid rgba(142, 184, 175, 0.2); border-radius: 13px; background: rgba(32, 57, 54, 0.3); }
-.result p:nth-child(2) { margin-bottom: 16px; }
+.result-title { margin-bottom: 13px; color: #eef2f0; font-size: 0.9rem; font-weight: 700; }
+.result-list { display: grid; gap: 7px; margin: 0 0 17px; padding: 0; list-style: none; }
+.result-list li { display: grid; grid-template-columns: 48px 1fr; gap: 9px; color: var(--muted); font-size: 0.72rem; }
+.result-list strong { color: var(--green-light); font-weight: 700; }
 .copied { color: var(--green-light); font-size: 0.72rem; font-weight: 700; }
 
 .section { padding: 112px 0; border-top: 1px solid var(--line); }
