@@ -191,11 +191,13 @@ h1 span { color: var(--green-light); }
   color: var(--muted);
   font: 700 0.7rem ui-monospace, SFMono-Regular, Consolas, monospace;
 }
-.tone-picker { display: flex; align-items: center; gap: 7px; margin: -5px 0 18px; }
-.tone-label { margin-right: 2px; color: var(--muted); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
-.tone-option { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.66rem; white-space: nowrap; }
-.tone-option-active { border-color: rgba(142, 184, 175, 0.45); background: rgba(63, 106, 99, 0.3); color: #eef2f0; }
-.tone-option kbd { color: var(--green-light); font: 700 0.62rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.tone-picker { margin: -3px 0 18px; }
+.tone-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.tone-options { display: flex; flex-wrap: wrap; gap: 7px; }
+.tone-option { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px 6px 6px; border: 1px solid var(--line); border-radius: 8px; background: rgba(0, 0, 0, 0.08); color: var(--muted); font-size: 0.66rem; white-space: nowrap; }
+.tone-option-active { border-color: rgba(142, 184, 175, 0.65); background: rgba(63, 106, 99, 0.34); color: #eef2f0; box-shadow: inset 0 0 0 1px rgba(142, 184, 175, 0.08); }
+.tone-option kbd { display: grid; width: 19px; height: 19px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.13); border-radius: 5px; background: rgba(255, 255, 255, 0.05); color: var(--green-light); font: 700 0.61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.tone-check { margin-left: 1px; color: var(--green-light); font-weight: 800; }
 .result { padding: 20px; border: 1px solid rgba(142, 184, 175, 0.2); border-radius: 13px; background: rgba(32, 57, 54, 0.3); }
 .result-text { margin-bottom: 16px; color: #eef2f0; }
 .copied { color: var(--green-light); font-size: 0.72rem; font-weight: 700; }
