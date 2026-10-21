@@ -25,7 +25,7 @@
     <main class="legal-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Statement</h1>
-      <p class="legal-meta">Effective and last updated: October 15, 2026</p>
+      <p class="legal-meta">Effective and last updated: October 21, 2026</p>
       <p class="legal-intro">
         RoboClip is a desktop clipboard assistant developed and maintained by Roland
         Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
@@ -49,6 +49,7 @@
         <ul>
           <li><strong>Clipboard content.</strong> RoboClip reads current clipboard text when you open or use its clipboard features. It does not continuously upload or remotely monitor your clipboard.</li>
           <li><strong>Prompts, template variables, and AI results.</strong> When you run a prompt, RoboClip combines the selected or entered instruction, any run-time variable choices, and clipboard text and sends them to your selected AI provider or local model server. The response is shown in RoboClip. A custom value entered through a template's Other choice is used for that run only and is not saved as a template option.</li>
+          <li><strong>Follow-up actions in development builds.</strong> When you explicitly run a follow-up template, the action sends the current result, including manual edits, and any original clipboard text included by its prompt to that action's selected AI provider or local model server. Its provider may differ from the first action's provider. Previous versions used by Undo are kept in memory until the popup is reset. With history enabled, each successful result is saved locally; Undo does not delete previously saved entries. This feature is in development and is not yet included in published downloads.</li>
           <li><strong>Local clipboard tools.</strong> JWT decoding, Base64 and Base64URL encoding or decoding, and URL-component encoding or decoding run inside RoboClip on your device. Clipboard content processed by these tools is not sent to an AI provider, GIPHY, or a RoboClip service. JWT decoding reads the header and payload but does not validate the signature.</li>
           <li><strong>GIF searches and media.</strong> For a GIF template, the selected AI provider turns the clipboard content into a short search phrase. RoboClip sends that phrase—not the original clipboard text—to GIPHY and loads the returned preview media. Selecting a result downloads the animated GIF to RoboClip's local cache and places that file on the native clipboard. The previous cached GIF is removed when another result is copied.</li>
           <li><strong>Local clipboard history.</strong> If enabled, input text, result text, action name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default). For JWT actions, RoboClip stores the decoded output but deliberately omits the original token from history. GIF search results and selected GIF media are not added to history.</li>

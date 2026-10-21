@@ -84,6 +84,19 @@ Keep the meaning and return only the rewritten text.
         <p>Add a few choices such as <strong>Friendly</strong>, <strong>Professional</strong>, and <strong>Direct</strong>. RoboClip shows them as numbered options and also offers <strong>Other…</strong> when you need something different.</p>
       </section>
 
+      <section class="guide-section" id="follow-up-actions">
+        <p class="eyebrow">In development</p>
+        <h2>Refine a result with your own actions.</h2>
+        <p>Follow-up templates are being developed for a future RoboClip release. They are not yet available in the published downloads.</p>
+        <p>In the development version, set an AI text action's <strong>Show this action</strong> field to <strong>Below results</strong> or <strong>At start and below results</strong>. It appears as a direct button below the result, with no extra menu. For example, create a <strong>Shorter</strong> action:</p>
+        <div class="action-example" aria-label="Example follow-up template">
+          <pre><code>Make this text shorter while preserving its meaning:
+
+{{result}}</code></pre>
+        </div>
+        <p><code>{{result}}</code> uses the latest result, including your own edits. <code>{{input}}</code> uses the original clipboard text. When an action runs at start, both use the clipboard. Other template variables still offer their numbered choices.</p>
+        <p>The result updates in place. Copy remains available while it runs, and <strong>Undo last action</strong> restores the previous text and formatting. Cancelling or a failed request leaves the previous result available. Undo does not delete saved history entries. Result-only actions do not use global shortcuts; local tools and GIF actions continue to run at start.</p>
+      </section>
       <section class="guide-section">
         <h2>Keep actions easy to recognize.</h2>
         <ul class="tip-list">
