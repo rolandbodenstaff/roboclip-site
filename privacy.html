@@ -25,13 +25,21 @@
     <main class="legal-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Statement</h1>
-      <p class="legal-meta">Effective and last updated: October 21, 2026</p>
+      <p class="legal-meta">Last updated: November 11, 2026; released clipboard features remain as described below</p>
       <p class="legal-intro">
         RoboClip is a desktop clipboard assistant developed and maintained by Roland
         Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
         information is handled when you use RoboClip.
       </p>
 
+      <section id="dictation-development">
+        <h2>In-development English dictation (not in the current Store release)</h2>
+        <p>The development foundation recognizes speech locally using Foundry Local and the pinned Nemotron CPU model. It does not send recordings or transcripts to an AI-action provider or a RoboClip service, and it does not read surrounding documents or clipboard content for recognition.</p>
+        <p>Audio is recorded in memory only, bounded to 60 seconds, and is not saved as an audio file. The recognized transcript is kept in app memory for review and an explicit Copy action; it is not written to history, setup logs, or a transcript file. Dismiss clears that recovery text. Copy replaces your clipboard only when you choose it. Automatic cleanup and insertion are not yet available.</p>
+        <p>After you choose to prepare dictation, RoboClip downloads the approximately 756 MB speech model into its local app cache. Model downloads and Foundry catalog refreshes can contact Microsoft-hosted endpoints and expose ordinary connection metadata, such as an IP address. Existing cached models can be used without downloading them again; the integrated app's cold offline startup has not yet been verified. Local processing does not mean the runtime never attempts a catalog connection.</p>
+        <p>The app disables nonessential Foundry and ONNX telemetry settings before initializing the runtime and requests fatal-only native diagnostics. Native component logs can contain technical error information and local paths; RoboClip does not deliberately log audio or transcript content. A complete native log and packaged offline audit remains pending.</p>
+        <p>Only the dictation on/off preference and model/runtime cache are saved on this device. Dictation preferences are separate from portable settings backups and your active AI-action provider. The model remains loaded while dictation is enabled and is unloaded when turned off. The RAM target is 2 GB for RoboClip; the load check is not a guarantee about inference peaks.</p>
+      </section>
       <section>
         <h2>Overview</h2>
         <p>
