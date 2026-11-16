@@ -25,7 +25,7 @@
     <main class="legal-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Statement</h1>
-      <p class="legal-meta">Effective and last updated: November 12, 2026</p>
+      <p class="legal-meta">Effective and last updated: November 16, 2026</p>
       <p class="legal-intro">
         RoboClip is a desktop clipboard assistant developed and maintained by Roland
         Bodenstaff ("RoboClip", "we", "us", or "our"). This statement explains how
@@ -39,8 +39,8 @@
           service, user-account database, advertising system, analytics service, or
           telemetry platform. Information leaves your device only when necessary for a
           feature you choose to use, such as signing in to an AI provider, testing a
-          connection, loading available models, submitting text for AI processing, or
-          searching GIPHY for a reaction image. Foundry Local also downloads model catalogs, model files and hardware support, and its Microsoft runtime can send essential device and process diagnostics while enabled.
+          connection, loading available models, submitting text for AI processing,
+          searching GIPHY for a reaction image, or synchronizing settings through a drive app you have chosen. Foundry Local also downloads model catalogs, model files and hardware support, and its Microsoft runtime can send essential device and process diagnostics while enabled.
         </p>
       </section>
 
@@ -53,8 +53,9 @@
           <li><strong>Local clipboard tools.</strong> JWT decoding, Base64 and Base64URL encoding or decoding, and URL-component encoding or decoding run inside RoboClip on your device. Clipboard content processed by these tools is not sent to an AI provider, GIPHY, or a RoboClip service. JWT decoding reads the header and payload but does not validate the signature.</li>
           <li><strong>GIF searches and media.</strong> For a GIF template, the selected AI provider turns the clipboard content into a short search phrase. RoboClip sends that phrase—not the original clipboard text—to GIPHY and loads the returned preview media. Selecting a result downloads the animated GIF to RoboClip's local cache and places that file on the native clipboard. The previous cached GIF is removed when another result is copied.</li>
           <li><strong>Local clipboard history.</strong> If enabled, input text, result text, action name, and creation time are stored locally. History is enabled by default and limited to the number of entries selected in Settings (50 by default). For JWT actions, RoboClip stores the decoded output but deliberately omits the original token from history. GIF search results and selected GIF media are not added to history.</li>
-          <li><strong>Settings and actions.</strong> Provider settings, the global popup shortcut, optional action shortcuts, theme, autostart choice, history limit, AI prompt actions, local-tool configurations, and preset variable choices are stored locally.</li>
-          <li><strong>Exported settings backups.</strong> When you choose Export settings, RoboClip writes a JSON file to the location you select. It contains actions and their optional shortcuts, local-tool configurations, the global popup shortcut, theme, history preference, and non-secret provider configuration. It excludes API keys, ChatGPT account identifiers and authorization data, clipboard history contents, and the autostart choice.</li>
+          <li><strong>Optional folder synchronization (0.14.0 and later).</strong> If you choose a synchronization folder, RoboClip writes actions, saved prompts and variable choices, action ordering and shortcuts, theme, history preferences, and non-secret cloud-provider configuration to roboclip-sync.json in that folder. Your installed drive app can transfer that file to its cloud service and other computers. RoboClip does not operate a sync server or verify cloud delivery. The file includes content hashes for version ancestry and conflict detection. Clipboard history contents, API keys, sign-ins, autostart, popup size, and local AI model/server configuration are excluded. Saved prompts and configuration can still contain personal information you entered. The chosen drive provider controls transfer, storage, account access, retention, version history, and any encryption it provides.</li>
+          <li><strong>Settings and actions.</strong> Provider settings, the global popup shortcut, optional action shortcuts, theme, autostart choice, history limit, AI prompt actions, local-tool configurations, and preset variable choices are stored locally in roboclip.json. Clipboard history is stored separately in history.json. The local settings file also records the optional sync-folder path, the last shared content hash, and a local exchange timestamp; it remains the working copy when a sync folder is unavailable.</li>
+          <li><strong>Exported settings backups.</strong> When you choose Export settings, RoboClip writes a JSON file to the location you select. It contains actions and their optional shortcuts, local-tool configurations, the global popup shortcut, theme, history preference, and non-secret provider configuration. It excludes API keys, ChatGPT account identifiers and authorization data, clipboard history contents, the autostart choice, and popup-size preference.</li>
           <li><strong>Provider credentials.</strong> AI-provider and GIPHY API keys are stored through the operating system's credential manager and not in RoboClip's ordinary settings file.</li>
           <li><strong>ChatGPT account information.</strong> If you choose Continue with ChatGPT, RoboClip locally stores the account identifier, email address, authorization tokens, selected model, and a random installation identifier. Authorization data is stored in an AES-256-GCM encrypted local vault whose key is held in the operating system credential manager.</li>
         </ul>
@@ -75,6 +76,7 @@
           <li>search GIPHY using an AI-generated phrase and display GIF previews;</li>
           <li>save optional local history and reusable actions;</li>
           <li>remember application and provider settings;</li>
+          <li>exchange shared settings and actions through an optional user-selected folder;</li>
           <li>authenticate with a provider and maintain that connection; and</li>
           <li>copy a result back to the clipboard.</li>
         </ul>
@@ -146,14 +148,16 @@
 
       <section>
         <h2>5. Local storage, retention, and deletion</h2>
+        <p>Turning synchronization off keeps your current local settings and stops further exchanges. It does not delete roboclip-sync.json, other computers' copies, or your drive provider's version history. Delete those through the drive provider if desired. RoboClip creates no extra local recovery backup of synced settings; historical recovery relies on the provider's version history. A complete temporary file is used while replacing the shared file. Conflicting settings or versions without matching history ask for an explicit choice before replacing settings.</p>
         <p>Local information remains until you delete it, change the relevant setting, sign out, or uninstall RoboClip.</p>
         <ul>
           <li>Search, copy, delete individual entries, or clear all saved clipboard entries from the History screen.</li>
           <li>Copying another GIF replaces the previous GIF in RoboClip's local media cache; uninstalling RoboClip or clearing its cache removes the remaining file.</li>
           <li>Disable history or change its maximum size in Settings.</li>
-          <li>In Foundry Local settings, unload the model, delete downloaded models, configure startup loading and idle unloading, or dismiss an exit notice. Unloading frees memory while keeping model files. Runtime caches/logs may remain until removed through operating-system application-data tools.</li>
+          <li>In Foundry Local settings, unload the model, delete files from the Downloaded models section after confirmation, configure startup loading and idle unloading, or dismiss an exit notice. Unloading frees memory while keeping model files. Runtime caches/logs may remain until removed through operating-system application-data tools.</li>
           <li>Edit or delete custom actions.</li>
           <li>Export or import actions and non-secret preferences. Exported backup files remain in the location you select until you move or delete them.</li>
+          <li>Turn synchronization off in Settings, or change its folder. Remove cloud copies and historical versions with your drive provider's controls.</li>
           <li>Remove API keys in the relevant provider settings.</li>
           <li>Sign out of ChatGPT to attempt remote revocation and remove local tokens. If revocation cannot be confirmed, disconnect RoboClip through ChatGPT settings.</li>
           <li>Use operating-system application-data and credential-management tools to remove any entries retained after uninstalling.</li>
@@ -196,7 +200,7 @@
         <h2>9. Your choices and rights</h2>
         <p>
           In-app controls let you manage, export, and import settings and actions,
-          clear history, manage Foundry Local model downloads and residency, dismiss model exit notices, remove API keys, and sign out of ChatGPT. Because RoboClip operates no user database or
+          clear history, enable or disable folder synchronization, choose a shared version after a conflict, manage Foundry Local model downloads and residency, dismiss model exit notices, remove API keys, and sign out of ChatGPT. Because RoboClip operates no user database or
           server, we generally possess no separate copy of your information. Direct legal
           requests concerning provider-held information to that provider. Use Microsoft's
           privacy controls for Microsoft Store information.
