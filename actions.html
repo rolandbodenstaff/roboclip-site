@@ -34,6 +34,16 @@
         </p>
       </section>
 
+      <section class="guide-section" aria-labelledby="run-action-title">
+        <h2 id="run-action-title">Run an action</h2>
+        <p>Copy text and open RoboClip with the shortcut shown on the Actions page. Click an action or press its <strong>Start key</strong>. You can copy the result or use a <strong>Follow-up key</strong> to refine a text result and then copy it.</p>
+        <figure class="guide-screenshot">
+          <img src="assets/actions.webp" width="1366" height="768" loading="lazy" alt="RoboClip Actions page showing the run sequence and separate Start key and Follow-up key columns." />
+          <figcaption><a href="assets/actions.webp">View the full-size Actions screenshot</a></figcaption>
+        </figure>
+        <p>The updated Actions page and editor are available in RoboClip 0.16.0 and later. Microsoft Store updates follow certification.</p>
+      </section>
+
       <section class="guide-section">
         <h2>Start in three steps.</h2>
         <div class="guide-grid">
@@ -50,7 +60,7 @@
           <article class="guide-card">
             <span class="step-number">03</span>
             <h3>Name and save it</h3>
-            <p>Give it a clear name. It appears in the popup and can also have its own shortcut.</p>
+            <p>Give it a clear name and save. Use <strong>Usage</strong> to choose when it appears in the popup and assign an optional global shortcut.</p>
           </article>
         </div>
       </section>
@@ -62,7 +72,7 @@
           <article class="action-type">
             <p class="eyebrow">AI action</p>
             <h3>Write a reusable instruction</h3>
-            <p>Use <code>{{input}}</code> where the clipboard text belongs. Leave the provider unchanged to use your default provider, or choose an override for this action only.</p>
+            <p>Use <code>{{input}}</code> where the clipboard text belongs. Open the <strong>Provider</strong> tab to choose a different model or provider for this action.</p>
           </article>
           <article class="action-type">
             <p class="eyebrow">Local tool</p>
@@ -81,22 +91,20 @@ Keep the meaning and return only the rewritten text.
 
 {{input}}</code></pre>
         </div>
-        <p>Add a few choices such as <strong>Friendly</strong>, <strong>Professional</strong>, and <strong>Direct</strong>. RoboClip shows them as numbered options and also offers <strong>Other…</strong> when you need something different.</p>
+        <p>The editor highlights placeholders. Open <strong>Questions</strong> to add choices such as <strong>Friendly</strong>, <strong>Professional</strong>, and <strong>Direct</strong>. RoboClip shows them as numbered options and also offers <strong>Other…</strong> when you need something different.</p>
       </section>
 
       <section class="guide-section" id="follow-up-actions">
-        <p class="eyebrow">New in 0.12.0</p>
         <h2>Refine a result with your own actions.</h2>
-        <p>Follow-up templates are available in <a href="https://github.com/rolandbodenstaff/RoboClip/releases/tag/app-v0.12.0">RoboClip 0.12.0 on GitHub</a>. The Microsoft Store update follows its separate certification and publication process.</p>
-        <p>Set an AI text action's <strong>Show this action</strong> field to <strong>Below results</strong> or <strong>At start and below results</strong>. It appears as a direct button below the result, with no extra menu. For example, create a <strong>Shorter</strong> action:</p>
+        <p>In <strong>Usage</strong>, set <strong>Show this action</strong> to <strong>As a follow-up</strong> or <strong>At start and as a follow-up</strong>. You can then run the action below an AI text result. Try a <strong>Shorter</strong> action:</p>
         <div class="action-example" aria-label="Example follow-up template">
           <pre><code>Make this text shorter while preserving its meaning:
 
 {{result}}</code></pre>
         </div>
         <p><code>{{result}}</code> uses the latest result, including your own edits. <code>{{input}}</code> uses the original clipboard text. When an action runs at start, both use the clipboard. Other template variables still offer their numbered choices.</p>
-        <p>Press <strong>1&ndash;9</strong> to run a numbered result action directly. Start actions and result actions each use their own visible order, so the same action can have different numbers in each place. Each card in Actions shows both numbers as <strong>Start</strong> and <strong>Result</strong>; moving actions up or down updates those numbers. Actions after the ninth remain clickable. While you type in a text field or an action is running, number keys do not start another follow-up. If a template asks for variables, its numbered choices work as usual.</p>
-        <p>The result updates in place. Copy remains available while it runs, and <strong>Undo last action</strong> restores the previous text and formatting. Cancelling or a failed request leaves the previous result available. Undo does not delete saved history entries. Result-only actions do not use global shortcuts; local tools and GIF actions continue to run at start.</p>
+        <p>Start actions and follow-ups have separate <strong>1&ndash;9</strong> keys. An action available in both places can have a different number in each. Use the arrows in Actions to change the order. Actions after the ninth remain clickable.</p>
+        <p>The result updates in place. You can still copy while the follow-up runs. <strong>Undo last action</strong> restores the previous text and formatting. Actions available only as follow-ups have no global shortcut. Local tools and GIF actions run at start.</p>
       </section>
       <section class="guide-section">
         <h2>Keep actions easy to recognize.</h2>
@@ -105,7 +113,7 @@ Keep the meaning and return only the rewritten text.
           <li>Keep one action focused on one job.</li>
           <li>Use the default provider unless this action really needs a different provider or model.</li>
           <li>Assign a direct shortcut only to actions you use often.</li>
-          <li>Drag actions into the order you want; popup number keys follow that order.</li>
+          <li>Use the up and down arrows to arrange actions. Popup number keys follow that order.</li>
         </ul>
         <div class="guide-cta">
           <p>Ready to try it? Open RoboClip, go to Actions, and start with one task you repeat every day.</p>

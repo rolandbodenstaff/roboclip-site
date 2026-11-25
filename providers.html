@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#203936" />
+    <meta name="description" content="Set up an on-device model, a local AI server, or a cloud AI provider in RoboClip." />
+    <title>Connect an AI provider — RoboClip</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RoboClip home">
+        <img src="icon.svg" width="40" height="40" alt="" />
+        <span>RoboClip</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./">Home</a>
+        <a href="actions.html">Actions</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="guide-main">
+      <section class="guide-hero">
+        <h1>Connect an AI provider</h1>
+        <p class="guide-intro">Open <strong>Settings → Providers → Text</strong> and select the provider you want to configure. Choose <strong>Set as default</strong> to use it for custom prompts and actions that use the default provider. An individual action can use a different provider via its <strong>Provider</strong> tab.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Run AI on your computer</h2>
+        <div class="action-types">
+          <article class="action-type">
+            <h3>On-device AI</h3>
+            <p>In the Windows preview, choose a profile and select <strong>Find recommended model</strong>. Review the download size, then choose <strong>Download and use</strong>. Manage downloaded files and memory from the same settings page.</p>
+          </article>
+          <article class="action-type">
+            <h3>Local AI server</h3>
+            <p>Start Ollama, LM Studio, or another OpenAI-compatible server on this computer. Select the runtime or enter its loopback address under <strong>Local AI server</strong>, refresh the model list, and test the connection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>Use a cloud provider</h2>
+        <ul class="tip-list">
+          <li><strong>ChatGPT plan (preview).</strong> Choose <strong>Continue with ChatGPT</strong>, authorize access in your browser, and choose a model. Availability and usage depend on your plan.</li>
+          <li><strong>OpenAI, Google Gemini, or Anthropic Claude.</strong> Enter your provider’s API key, choose a model, and select <strong>Test connection</strong>.</li>
+          <li><strong>Azure AI Foundry.</strong> Enter your endpoint, deployment name, API version, and API key, then test the connection.</li>
+        </ul>
+        <p>RoboClip keeps provider credentials in your operating system’s credential manager or an encrypted local vault. Read the <a href="privacy.html">privacy statement</a> for what each provider receives.</p>
+      </section>
+
+      <section class="guide-section">
+        <h2>Set up reaction GIFs</h2>
+        <p>Get an API key from the <a href="https://developers.giphy.com/">GIPHY developer dashboard</a> and save it under <strong>Settings → Providers → GIF</strong>. A GIF action uses your AI provider to generate a short search phrase. RoboClip sends that phrase to GIPHY and loads matching GIFs.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand">
+        <img src="icon.svg" width="32" height="32" alt="" />
+        <span>RoboClip</span>
+      </div>
+      <p>AI and local clipboard actions for Windows.</p>
+      <div class="footer-links">
+        <a href="./">Home</a>
+        <a href="actions.html">Actions</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <p class="copyright">© 2026 Roland Bodenstaff</p>
+    </footer>
+  </body>
+</html>
